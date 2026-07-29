@@ -1,4 +1,5 @@
 import "./App.css";
+import { Banner } from "./componentes/Banner";
 import { FormularioDeEvento } from "./componentes/FormularioDeEvento";
 import { Tema } from "./componentes/Tema";
 
@@ -30,19 +31,31 @@ function App() {
     },
   ];
 
+  const eventos = [
+    {
+      capa: "https:",
+      tema: temas[0],
+      data: new Date(),
+      titulo: "Mulher no Front",
+    },
+  ];
+
   return (
     <main>
       <header>
         <img src="/logo.png" alt="logo" />
       </header>
-      <section>
-        <img src="/hero.png" alt="hero" />
-      </section>
+      <Banner />
       <FormularioDeEvento />
-      <section>
-        <Tema tema={temas[0]} />
-      </section>
-      <section>
+      {temas.map(function (item) {
+        return (
+          <section key={item.id}>
+            <Tema tema={item} />
+          </section>
+        );
+      })}
+
+      {/*       <section>
         <Tema tema={temas[1]} />
       </section>
       <section>
@@ -56,7 +69,7 @@ function App() {
       </section>
       <section>
         <Tema tema={temas[5]} />
-      </section>
+      </section> */}
     </main>
   );
 }
