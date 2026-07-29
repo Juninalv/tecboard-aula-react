@@ -48,7 +48,7 @@ function App() {
         <img src="/logo.png" alt="logo" />
       </header>
       <Banner />
-      <FormularioDeEvento />
+      <FormularioDeEvento temas={temas} />
       {temas.map(function (item) {
         return (
           <section key={item.id}>
