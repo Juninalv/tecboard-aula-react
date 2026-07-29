@@ -2,6 +2,8 @@ import "./App.css";
 import { Banner } from "./componentes/Banner";
 import { FormularioDeEvento } from "./componentes/FormularioDeEvento";
 import { Tema } from "./componentes/Tema";
+import mulherNoFront from "./assets/mulher-no-front.png";
+import { CardEvento } from "./componentes/CardEvento/cardEvento";
 
 function App() {
   const temas = [
@@ -33,7 +35,7 @@ function App() {
 
   const eventos = [
     {
-      capa: "https:",
+      capa: mulherNoFront,
       tema: temas[0],
       data: new Date(),
       titulo: "Mulher no Front",
@@ -51,6 +53,7 @@ function App() {
         return (
           <section key={item.id}>
             <Tema tema={item} />
+            <CardEvento evento={eventos[0]} />
           </section>
         );
       })}
